@@ -1,24 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css";
+// import Home from "./pages/HomePage";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { Toaster } from "react-hot-toast";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <div>
+//         <Toaster
+//           position="top-right"
+//           toastOptions={{
+//             success: {
+//               theme: {
+//                 primary: "#4aed88",
+//               },
+//             },
+//           }}
+//         ></Toaster>
+//       </div>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="/" element={<Home />}></Route>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// }
+
+// export default App;
+import "./App.css";
+import Home from "./pages/HomePage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            success: {
+              style: {
+                background: "#4aed88",
+                color: "#fff",
+              },
+            },
+          }}
+        ></Toaster>
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/editor/:roomId"
+            element={<div>Editor page</div>}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
